@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InmobiliariaVG — Project Presentation</title>
+<style>
+  :root{--green:#0e7c66;--green-d:#0a5d4c;--blue:#1d6fb8;--purple:#6b3fa0;--ink:#16202a;--mut:#5a6b78;--line:#e2e8ed;--soft:#f5f8f7}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--soft);-webkit-font-smoothing:antialiased;line-height:1.55}
+  a{text-decoration:none;color:inherit}
+
+  /* top tab bar */
+  .bar{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .bar .in{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px;padding:0 22px}
+  .brand{font-weight:800;font-size:18px;color:var(--green)}
+  .brand span{color:var(--ink)}
+  .tabs{display:flex;gap:6px}
+  .tabs button{font:inherit;font-size:14px;font-weight:600;color:var(--mut);background:none;border:1px solid transparent;border-radius:999px;padding:8px 16px;cursor:pointer}
+  .tabs button:hover{color:var(--green)}
+  .tabs button.active{color:#fff;background:var(--green);border-color:var(--green)}
+  @media(max-width:620px){.tabs button{padding:7px 11px;font-size:13px}.brand{font-size:16px}}
+
+  /* hero, only on landing */
+  .hero{background:linear-gradient(160deg,#f5f8f7,#e7f0ec);border-bottom:1px solid var(--line)}
+  .hero .in{max-width:1000px;margin:0 auto;padding:70px 22px}
+  .eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:700;color:var(--green)}
+  .hero h1{font-size:46px;font-weight:800;max-width:840px;margin:14px 0}
+  .hero h1 em{font-style:normal;color:var(--green)}
+  .hero p{font-size:19px;color:var(--mut);max-width:740px}
+  @media(max-width:620px){.hero h1{font-size:32px}}
+
+  .cards{max-width:1000px;margin:0 auto;padding:50px 22px 70px;display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  @media(max-width:760px){.cards{grid-template-columns:1fr}}
+  .pcard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:10px;cursor:pointer;transition:.15s;box-shadow:0 1px 3px rgba(20,40,55,.04)}
+  .pcard:hover{border-color:var(--green);transform:translateY(-2px);box-shadow:0 6px 20px rgba(14,124,102,.10)}
+  .pcard .tag{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;border-radius:6px;padding:4px 10px;align-self:flex-start}
+  .pcard h2{font-size:22px;font-weight:800}
+  .pcard p{font-size:14px;color:var(--mut)}
+  .pcard .go{font-size:14px;font-weight:700;color:var(--green);margin-top:6px}
+
+  .frameWrap{display:none;height:calc(100vh - 60px)}
+  .frameWrap.show{display:block}
+  .frameWrap iframe{width:100%;height:100%;border:0;background:#fff}
+  #landing.hide{display:none}
+
+  footer{max-width:1000px;margin:0 auto;padding:0 22px 50px;color:var(--mut);font-size:13px}
+  .docrow{display:flex;gap:16px;flex-wrap:wrap;margin-top:14px}
+  .docrow a{font-size:13px;font-weight:600;color:var(--green);border:1px solid var(--line);background:#fff;border-radius:10px;padding:10px 14px}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="in">
+    <div class="brand">Inmobiliaria<span>VG</span></div>
+    <div class="tabs">
+      <button data-view="landing" class="active">Overview</button>
+      <button data-view="present">Project &amp; Stack</button>
+      <button data-view="proto">Prototype</button>
+    </div>
+  </div>
+</div>
+
+<!-- LANDING -->
+<div id="landing">
+  <div class="hero">
+    <div class="in">
+      <div class="eyebrow">PropTech × Age-Tech · Silver Economy</div>
+      <h1>A <em>peace-of-mind</em> platform for retirees buying &amp; relocating abroad.</h1>
+      <p>One trusted, English-language experience that turns an intimidating cross-border property purchase into a calm, guided path — from immersive 3D discovery to financing, legal &amp; visa support, to arrival and community.</p>
+    </div>
+  </div>
+  <div class="cards">
+    <div class="pcard" data-go="present">
+      <span class="tag" style="background:#0e7c66">The Why &amp; How</span>
+      <h2>Project &amp; Stack</h2>
+      <p>Executive summary and justification, the 12-stage journey, the product, the full technology stack, and the implementation roadmap. The case for the platform.</p>
+      <span class="go">Open presentation →</span>
+    </div>
+    <div class="pcard" data-go="proto">
+      <span class="tag" style="background:#1d6fb8">The Interface</span>
+      <h2>Interactive Prototype</h2>
+      <p>The full experience, screen by screen — every buyer-facing UX/UI and the internal sales CRM shown as the actual interface, with the functionality of each step explained.</p>
+      <span class="go">Open walkthrough →</span>
+    </div>
+  </div>
+  <footer>
+    Detailed specifications also available in this folder:
+    <div class="docrow">
+      <a href="InmobiliariaVG_UX_Spec.docx">📘 UX / UI Specification (.docx)</a>
+      <a href="InmobiliariaVG_CRM_Frontend_Spec.docx">📗 CRM Frontend Specification (.docx)</a>
+    </div>
+  </footer>
+</div>
+
+<!-- EMBEDDED VIEWS -->
+<div class="frameWrap" id="frame-present"><iframe data-src="InmobiliariaVG_Presentation.html" title="Project & Stack"></iframe></div>
+<div class="frameWrap" id="frame-proto"><iframe data-src="InmobiliariaVG_Prototype.html" title="Interactive Prototype"></iframe></div>
+
+<script>
+  const tabs=[...document.querySelectorAll('.tabs button')];
+  const landing=document.getElementById('landing');
+  const views={present:document.getElementById('frame-present'),proto:document.getElementById('frame-proto')};
+  function show(view){
+    tabs.forEach(b=>b.classList.toggle('active',b.dataset.view===view));
+    if(view==='landing'){landing.classList.remove('hide');Object.values(views).forEach(v=>v.classList.remove('show'));window.scrollTo(0,0);return;}
+    landing.classList.add('hide');
+    Object.entries(views).forEach(([k,el])=>{
+      if(k===view){const f=el.querySelector('iframe');if(!f.src)f.src=f.dataset.src;el.classList.add('show');}
+      else el.classList.remove('show');
+    });
+  }
+  tabs.forEach(b=>b.addEventListener('click',()=>show(b.dataset.view)));
+  document.querySelectorAll('.pcard').forEach(c=>c.addEventListener('click',()=>show(c.dataset.go)));
+</script>
+</body>
+</html>
